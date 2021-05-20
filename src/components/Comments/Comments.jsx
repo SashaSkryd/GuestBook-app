@@ -12,7 +12,7 @@ class Comments extends Component {
               <li key={el._id} className={styles.itemForm}>
                 <p>
                   <span className={styles.itemFormText}>Said: </span>
-                  {el.name} <span className={styles.itemFormTextTime}>in</span> {el.time}
+                  {el.name} <span className={styles.itemFormText}>in</span> {el.time}
                 </p>
                 <p>
                   <span className={styles.itemFormText}>Comment: </span>

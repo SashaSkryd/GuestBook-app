@@ -3,6 +3,12 @@ import styles from "./GuestBook.module.css"
 import { Formik, Form, Field, ErrorMessage } from "formik"
 import * as Yup from "yup"
 
+const validationComment = 
+      Yup.object().shape({
+        name: Yup.string().required("This is required").min(3, "Write full your name  please"),
+        comment: Yup.string().required("This is required").min(3, "Write pleace more")
+      })
+
 class GuestBook extends Component {
   SubmitComment = (value) => {
     let name = value.name
@@ -11,24 +17,19 @@ class GuestBook extends Component {
       name: name,
       comment: comment,
     }
-    this.props.hendlerCommentNew(data)
-  }
+    name.length > 0 && comment.length > 0 && this.props.hendlerCommentNew(data) 
 
-  validationComment = () =>
-    Yup.object().shape({
-      name: Yup.string().required("This text area is required").min(2, "Write full your name  please"),
-      comment: Yup.string().required("This text area is required").min(2, "Write pleace more"),
-    })
+  }
 
   render() {
     return (
       <Formik
         initialValues={{ name: "", comment: "" }}
-        validationComment={this.validationComment}
         onSubmit={(value, { resetForm }) => {
           this.SubmitComment(value)
           resetForm()
         }}
+        validationSchema = {validationComment}
       >
         {({ resetForm }) => (
           <Form>

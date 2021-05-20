@@ -19,11 +19,6 @@
     color: rgb(165, 152, 152);
     font-size: 12px;
   }
-  .itemFormTextTime{
-    color: rgb(165, 152, 152);
-    font-size: 12px;
-    margin-left: auto;
-  }
 }
 
 @media screen and (min-width: 768px) {
