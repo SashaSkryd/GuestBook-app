@@ -24,14 +24,14 @@ Back: cors, dotenv, express, joi, moment, mongoose, morgan
 
 # Tasks solved and this is application functionality
 
--- Structure of the message sending form: name, text, button
--- The message is sent by clicking on the button and by Ctrl + Enter
--- A new message is added without reloading the page
--- A new message is added to the beginning (top) of the message list
--- Messages sorted in descending order by date (newest at the top)
--- New message contains sender's name and text
--- After a forced reload of the page, the message does not disappear, does not move
--- When entering the page from another browser, the message remains in place (data storage on the server)
+- Structure of the message sending form: name, text, button
+- The message is sent by clicking on the button and by Ctrl + Enter
+- A new message is added without reloading the page
+- A new message is added to the beginning (top) of the message list
+- Messages sorted in descending order by date (newest at the top)
+- New message contains sender's name and text
+- After a forced reload of the page, the message does not disappear, does not move
+- When entering the page from another browser, the message remains in place (data storage on the server)
  `Frontend`
 - Used any of the UI frameworks
 - Adaptive layout
