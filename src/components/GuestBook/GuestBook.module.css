@@ -2,36 +2,51 @@
   .form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    text-align: start;
+    padding: 15px 15px 15px 15px;
     margin: 0 auto;
     width: 320px;
-    min-height: 200px;
+    background-color: rgba(65, 122, 65, 80%);
+    border-radius: 10px;
+    position: relative;
   }
   .textareaForm {
     max-width: 290px;
     min-width: 290px;
     border-radius: 4px;
     border-color: #2196f3;
-    margin: 0 auto;
-    margin-top: 10px;
     min-height: 40px;
-    opacity: 0.5;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+  .textareaForm::placeholder {
+    color: rgb(165, 152, 152);
+    font-size: 16px;
+    line-height: 120%;
+    font-style: italic;
+    padding: 7px;
   }
   .inputForm {
-    min-width: 120px;
-    height: 20px;
-    margin: 0 auto;
-    margin-top: 10px ;
-    margin-bottom: 10px;
+    max-width: 290px;
+    height: 30px;
     border-color: #2196f3;
     border-radius: 4px;
-    opacity: 0.5;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+  .inputForm::placeholder {
+    color: rgb(165, 152, 152);
+    font-size: 13px;
+    font-style: italic;
+    padding-left: 10px;
   }
   .buttonForm {
     width: 180px;
     margin: 0 auto;
+    margin-top: 15px;
     color: #fff;
-    background-color: #2196f3;
+    background-color: rgb(65, 122, 65);
     border: 0;
     outline: 0;
     padding: 4px 10px;
@@ -39,24 +54,109 @@
     cursor: pointer;
     font: inherit;
     font-weight: 500;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   }
 
   .buttonForm:focus,
   .buttonForm:hover {
     background-color: black;
   }
-  .spanForm {
+  .labelCommentForm {
+    color: white;
+    font-size: 15px;
+  }
+  .advertising {
+    /* display: none; */
     margin-top: 15px;
+    padding: 15px;
+    height: 70px;
+    background-color: rgb(231, 252, 241);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+  .advertisingTextOk{
+    color: green;
+  }
+  .advertisingTextError{
+    color: red;
+  }
+  .spanFormNameError {
+    position: absolute;
+    font-weight: 500;
+    font-size: 15px;
+    left: 94px;
+    color: rgb(233, 111, 111);
+  }
+  .spanFormCommentError {
+    position: absolute;
+    font-weight: 500;
+    font-size: 15px;
+    color: rgb(233, 111, 111);
+    top: 67px;
+    left: 120px;
   }
 }
-/* @media screen and  (min-width: 768px) {
-      .form{
-        
-    }
+@media screen and (min-width: 768px) {
+  .form {
+    background-color: rgba(119, 59, 10, 0.8);
+    width: 768px;
+    padding: 15px 30px 15px 30px;
+  }
+  .buttonForm {
+    background-color: rgb(119, 59, 10);
+  }
+  .advertising {
+    position: absolute;
+    margin-top: 0;
+    padding: 15px 30px 15px 30px;
+    top: 38px;
+    left: 345px;
+    background-color: blanchedalmond;
+    width: 393px;
+    height: 90px;
+    font-style: italic;
+  
+  }
+  .advertisingTextOk{
+    font-size: 22px;
+  }
+  .advertisingTextError{
+    font-size: 22px;
+  }
+  .spanFormNameError {
+    left: 108px;
+  }
+  .spanFormCommentError {
+    left: 134px;
+  }
 }
-@media screen and  (min-width: 1280px) {
-    
-     .form{
-       
-    }
-} */
+@media screen and (min-width: 1280px) {
+  .form {
+    background-color: rgba(70, 70, 145, 80%);
+    width: 1280px;
+    padding: 15px 50px 15px 50px;
+  }
+  .buttonForm {
+    background-color: rgb(70, 70, 145);
+  }
+  .advertising {
+    padding: 15px 50px 15px 50px;
+    left: 370px;
+    width: 860px;
+    background-color: rgb(217, 192, 223);
+  }
+  .advertisingTextOk{
+    font-size: 26px;
+  }
+  .advertisingTextError{
+    font-size: 26px;
+  }
+  .spanFormNameError {
+    left: 127px;
+  }
+  .spanFormCommentError {
+    left: 154px;
+  }
+}

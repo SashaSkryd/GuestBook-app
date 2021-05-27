@@ -1,60 +1,93 @@
-import React, { Component } from "react"
+import React, { useEffect, useState } from "react"
 import styles from "./GuestBook.module.css"
 import { Formik, Form, Field, ErrorMessage } from "formik"
 import * as Yup from "yup"
 
-const validationComment = 
-      Yup.object().shape({
-        name: Yup.string().required("This is required").min(3, "Write full your name  please"),
-        comment: Yup.string().required("This is required").min(3, "Write pleace more")
-      })
-
-class GuestBook extends Component {
-  SubmitComment = (value) => {
-    let name = value.name
-    let comment = value.comment
-    let data = {
-      name: name,
-      comment: comment,
+export default function GuestBook(props) {
+  function validateComment(value) {
+    let error
+    if (!value) {
+      error = "Required"
     }
-    name.length > 0 && comment.length > 0 && this.props.hendlerCommentNew(data) 
-
+    return error
   }
 
-  render() {
-    return (
-      <Formik
-        initialValues={{ name: "", comment: "" }}
-        onSubmit={(value, { resetForm }) => {
-          this.SubmitComment(value)
-          resetForm()
-        }}
-        validationSchema = {validationComment}
-      >
-        {({ resetForm }) => (
-          <Form>
-            <div className={styles.form}>
-              <ErrorMessage name="name" component="span" />
-              <label htmlFor="name">Write here your name:</label>
-              <Field className={styles.inputForm} type="name" name="name" placeholder="Write in this area" />
-              <ErrorMessage name="comment" component="span" />
-              <label htmlFor="comment">Write here your comment:</label>
-              <Field
-                className={styles.textareaForm}
-                as="textarea"
-                type="comment"
-                name="comment"
-                placeholder="Write in this area"
-              />
+  function validateName(value) {
+    let error
+    if (value === "admin") {
+      error = "Nice try!"
+    }
+    return error
+  }
+
+  const validationComment = Yup.object().shape({
+    name: Yup.string()
+      .required("this is required!")
+      .min(2, "write full your name please!")
+      .matches(/^[a-zA-Z-1234567890_]+$/, "Not in correct format"),
+    comment: Yup.string().required("this is required!").min(2, "write pleace more!"),
+  })
+
+  const SubmitComment = (value) => {
+    let data = {
+      name: value.name,
+      comment: value.comment,
+    }
+    value.name.length > 0 && value.comment.length > 0 && props.hendlerCommentNew(data)
+    value.comment = ""
+  }
+
+  return (
+    <Formik
+      initialValues={{ name: "", comment: "" }}
+      onSubmit={(value) => {
+        SubmitComment(value)
+      }}
+      validationSchema={validationComment}
+    >
+      {(value) => (
+        <Form
+          onKeyPress={(e) => {
+            if (e.ctrlKey && e.code === "Enter") {
+              SubmitComment(value.values)
+            }
+          }}
+        >
+          <div className={styles.form}>
+            <ErrorMessage name="name" component="span" className={styles.spanFormNameError} />
+            <label htmlFor="name" className={styles.labelCommentForm}>
+              Your name:
+            </label>
+            <Field
+              className={styles.inputForm}
+              type="name"
+              name="name"
+              placeholder="Write in this area"
+              validate={validateName}
+            />
+            <ErrorMessage name="comment" component="span" className={styles.spanFormCommentError} />
+            <label htmlFor="comment" className={styles.labelCommentForm}>
+              Your comment:
+            </label>
+            <Field
+              className={styles.textareaForm}
+              as="textarea"
+              type="comment"
+              name="comment"
+              placeholder="Write in this area"
+              validate={validateComment}
+            />
+            <div className={styles.advertising}>
+              <p className={styles.advertisingText}>Your ad could be here !</p>
+              {props.message === 200 && <p className={styles.advertisingTextOk}>Ok, add your message !!!</p>}
+              {props.message === 400 && <p className={styles.advertisingTextError}>Error try again !!!</p>}
             </div>
-            <button className={styles.buttonForm} type="submit">
-              Add Comment
-            </button>
-          </Form>
-        )}
-      </Formik>
-    )
-  }
+          </div>
+          <button className={styles.buttonForm} type="submit">
+            Add Comment
+          </button>
+        </Form>
+      )}
+    </Formik>
+  )
 }
-
-export default GuestBook
