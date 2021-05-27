@@ -1,70 +1,68 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Getting Started 
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm start` app , and `npm run dev` server
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Technology
 
-### `npm test`
+HTML, CSS, JS, React, Noda
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Packages
 
-### `npm run build`
+Front: axios, formik, react-transition-group, yup
+Back: cors, dotenv, express, joi, moment, mongoose, morgan
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Elapsed time
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+32 hours // +-
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Tasks solved and this is application functionality
 
-### `npm run eject`
+1.Structure of the message sending form: name, text, button
+2.The message is sent by clicking on the button and by Ctrl + Enter
+3.A new message is added without reloading the page
+4.A new message is added to the beginning (top) of the message list
+5.Messages sorted in descending order by date (newest at the top)
+6.New message contains sender's name and text
+7.After a forced reload of the page, the message does not disappear, does not move
+8.When entering the page from another browser, the message remains in place (data storage on the server)
+ `Frontend`
+1.Used any of the UI frameworks
+2.Adaptive layout
+3.On hover and other events, application elements do not move
+4.JS form validation and error notifications
+   4.1.Visually empty fields cannot be sent
+   4.2.You cannot send the field name with invalid characters (allowed: latin letters, numbers, underscore)
+   4.3.Here is a notification about which field is the error
+   4.4.Error notification is hidden when you start typing in the corresponding field
+   4.5.Error notifications when appearing do not shift other fields
+   4.6.Regular expressions are used in validation (for example, the prohibition of adding hyperlinks) - Formik is used in the test
+5.Server responses processed (message added, not added ...)
+6.Here are no extra renders
+7.Used hooks useState, useCallback and others
+8.After submitting the form, the message text field is cleared
+9.After submitting the form, the author field is NOT cleared
+10.Environment variables used
+  `Backend`
+1.the code is structured
+2.database used
+3.errors are handled
+4.when adding a message, the server returns a status and a new message (not the entire list)
+5.incoming data is validated
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Link to the working version of the application
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+https://enigmatic-coast-01412.herokuapp.com
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Working instructions for assembly and start-up
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+you clone the front:`https://github.com/SashaSkryd/guest-book-app/edit/main` 
+and back:`https://github.com/SashaSkryd/guest-book-server/tree/main`, 
+change the paths on the front to `http: // localhost: 3000`, upon request to the server for receiving and sending data!
+start the project, see above
