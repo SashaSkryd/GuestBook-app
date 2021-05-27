@@ -37,12 +37,12 @@ Back: cors, dotenv, express, joi, moment, mongoose, morgan
 - Adaptive layout
 - On hover and other events, application elements do not move
 - JS form validation and error notifications
-   >- 4.1.Visually empty fields cannot be sent
-   >- 4.2.You cannot send the field name with invalid characters (allowed: latin letters, numbers, underscore)
-   >- 4.3.Here is a notification about which field is the error
-   >- 4.4.Error notification is hidden when you start typing in the corresponding field
-   >- 4.5.Error notifications when appearing do not shift other fields
-   >- 4.6.Regular expressions are used in validation (for example, the prohibition of adding hyperlinks) - Formik is used in the test
+   >- Visually empty fields cannot be sent
+   >- You cannot send the field name with invalid characters (allowed: latin letters, numbers, underscore)
+   >- Here is a notification about which field is the error
+   >- Error notification is hidden when you start typing in the corresponding field
+   >- Error notifications when appearing do not shift other fields
+   >- Regular expressions are used in validation (for example, the prohibition of adding hyperlinks) - Formik is used in the test
 - Server responses processed (message added, not added ...)
 - Here are no extra renders
 - Used hooks useState, useCallback and others
