@@ -7,7 +7,7 @@ In the project directory, you can run:
 ### `npm start` app , and `npm run dev` server
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:5000](http://localhost:5000) to view it in the browser.
 
 ## Technology
 
@@ -58,11 +58,11 @@ Back: cors, dotenv, express, joi, moment, mongoose, morgan
 
 # Link to the working version of the application
 
-https://enigmatic-coast-01412.herokuapp.com
+[My guest book](https://enigmatic-coast-01412.herokuapp.com)
 
 # Working instructions for assembly and start-up
 
-you clone the front:`https://github.com/SashaSkryd/guest-book-app/edit/main` 
-and back:`https://github.com/SashaSkryd/guest-book-server/tree/main`, 
+you clone the [front](https://github.com/SashaSkryd/guest-book-app/edit/main)
+and [back](https://github.com/SashaSkryd/guest-book-server/tree/main) 
 change the paths on the front to `http: // localhost: 3000`, upon request to the server for receiving and sending data!
 start the project, see above
