@@ -13,10 +13,10 @@ export default function App() {
     axios
       .get("/comments")
       .then((res) => {
-        this.setState({ comments: res.data.reverse() })
+        setComments( res.data.reverse() )
       })
       .catch((error) => console.log(error))
-  })
+  },[])
 
   const hendlerCommentNew = (data) => {
     const dataJSON = JSON.stringify(data)
@@ -27,23 +27,19 @@ export default function App() {
         },
       })
       .then((res) => {
-        this.state.comments.unshift(res.data)
-        this.setState({
-          comments: this.state.comments,
-          message: res.status,
-        })
+      
+        setComments( [res.data, ...comments] )
+        setMessage( res.status )
       })
       .catch((error) => {
-        this.setState({
-          message: 400,
-        })
+        setMessage( 400 )
       })
   }
-
+  
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Welcome to the guest book!</h1>
-      <GuestBook hendlerCommentNew={hendlerCommentNew} message={setMessage} />
+      <GuestBook hendlerCommentNew={hendlerCommentNew} message={message} />
       {
         <CSSTransition in={!!comments[0]} classNames={appAnimation} timeout={250} unmountOnExit>
           <Comments comments={comments} />
