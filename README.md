@@ -24,9 +24,9 @@ Back: cors, dotenv, express, joi, moment, mongoose, morgan
 
 # Tasks solved and this is application functionality
 
-*1.Structure of the message sending form: name, text, button
-2.The message is sent by clicking on the button and by Ctrl + Enter
-3.A new message is added without reloading the page
+-1.Structure of the message sending form: name, text, button
+-2.The message is sent by clicking on the button and by Ctrl + Enter
+-3.A new message is added without reloading the page
 4.A new message is added to the beginning (top) of the message list
 5.Messages sorted in descending order by date (newest at the top)
 6.New message contains sender's name and text
